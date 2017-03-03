@@ -1,2 +1,2 @@
-# webscraper-microservices-backend
-The backend of our webscraper microservices course
+# Backend
+The backend of our full-stack crash course
