@@ -19,7 +19,7 @@ public class RabbitMqConfiguration
         CachingConnectionFactory connectionFactory = new CachingConnectionFactory("localhost");
         connectionFactory.setUsername("user");
         connectionFactory.setPassword("password");
-        connectionFactory.setPort(5672);
+        connectionFactory.setPort(7234);
         return connectionFactory;
     }
 
