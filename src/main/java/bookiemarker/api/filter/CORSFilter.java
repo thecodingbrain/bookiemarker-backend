@@ -1,4 +1,4 @@
-package scraper.api.filter;
+package bookiemarker.api.filter;
 
 import org.springframework.stereotype.Component;
 

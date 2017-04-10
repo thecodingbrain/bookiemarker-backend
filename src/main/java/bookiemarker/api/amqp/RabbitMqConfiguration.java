@@ -1,4 +1,4 @@
-package scraper.api.amqp;
+package bookiemarker.api.amqp;
 
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;

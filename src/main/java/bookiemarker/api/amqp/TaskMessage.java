@@ -1,4 +1,4 @@
-package scraper.api.amqp;
+package bookiemarker.api.amqp;
 
 public class TaskMessage
 {

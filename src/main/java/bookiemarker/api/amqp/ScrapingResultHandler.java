@@ -1,9 +1,9 @@
-package scraper.api.amqp;
+package bookiemarker.api.amqp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import scraper.api.domain.Bookmark;
-import scraper.api.domain.BookmarkRepository;
+import bookiemarker.api.domain.Bookmark;
+import bookiemarker.api.domain.BookmarkRepository;
 
 import java.util.List;
 
@@ -26,6 +26,8 @@ public class ScrapingResultHandler
         {
             for (Bookmark bookmark : bookmarks)
             {
+                bookmark.setTitle(scrapingResultMessage.getTitle());
+                bookmark.setThumbnail(scrapingResultMessage.getThumbnail());
                 bookmark.setSummary(scrapingResultMessage.getSummary());
                 bookmarkRepository.save(bookmarks);
                 System.out.println("updated bookmark: " + url);

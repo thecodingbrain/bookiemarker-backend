@@ -1,11 +1,11 @@
-package scraper.api.domain;
+package bookiemarker.api.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.annotation.HandleAfterCreate;
 import org.springframework.data.rest.core.annotation.HandleBeforeCreate;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
-import scraper.api.amqp.TaskMessage;
-import scraper.api.amqp.TaskProducer;
+import bookiemarker.api.amqp.TaskMessage;
+import bookiemarker.api.amqp.TaskProducer;
 
 import java.util.Date;
 
@@ -20,7 +20,6 @@ public class BookmarkEventHandler
     {
         bookmark.setCreated(new Date());
         bookmark.setUrl(bookmark.getUrl().trim());
-
     }
 
     @HandleAfterCreate

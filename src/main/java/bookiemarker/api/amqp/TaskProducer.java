@@ -1,4 +1,4 @@
-package scraper.api.amqp;
+package bookiemarker.api.amqp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

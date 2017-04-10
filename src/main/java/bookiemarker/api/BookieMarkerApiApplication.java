@@ -1,19 +1,19 @@
-package scraper.api;
+package bookiemarker.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import scraper.api.domain.BookmarkEventHandler;
-import scraper.api.filter.CORSFilter;
+import bookiemarker.api.domain.BookmarkEventHandler;
+import bookiemarker.api.filter.CORSFilter;
 
 @SpringBootApplication
-public class ScraperApiApplication
+public class BookieMarkerApiApplication
 {
 
     public static void main(String[] args)
     {
-        SpringApplication.run(ScraperApiApplication.class, args);
+        SpringApplication.run(BookieMarkerApiApplication.class, args);
     }
 
     @Bean
