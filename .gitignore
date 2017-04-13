@@ -10,3 +10,4 @@ build
 .gradle
 java-api-backend.iws
 *.log
+lib/*
