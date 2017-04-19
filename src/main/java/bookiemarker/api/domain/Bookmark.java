@@ -1,7 +1,6 @@
 package bookiemarker.api.domain;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 public class Bookmark
@@ -13,15 +12,6 @@ public class Bookmark
     @Column(nullable=false)
     private String url;
 
-    @Column(columnDefinition = "Text")
-    private String summary = "";
-
-    @Column
-    private String title = "";
-
-    @Column
-    private String thumbnail = "100x100.png";
-
     public String getUrl() {
 
         return url;
@@ -30,35 +20,5 @@ public class Bookmark
     public void setUrl(String url) {
 
         this.url = url;
-    }
-
-    public String getSummary() {
-
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-
-        this.summary = summary;
-    }
-
-    public String getTitle() {
-
-        return title;
-    }
-
-    public void setTitle(String title) {
-
-        this.title = title;
-    }
-
-    public String getThumbnail() {
-
-        return thumbnail;
-    }
-
-    public void setThumbnail(String thumbnail) {
-
-        this.thumbnail = thumbnail;
     }
 }
