@@ -11,9 +11,6 @@ public class Bookmark
     private long id;
 
     @Column(nullable=false)
-    private Date created;
-
-    @Column(nullable=false)
     private String url;
 
     @Column(columnDefinition = "Text")
@@ -24,16 +21,6 @@ public class Bookmark
 
     @Column
     private String thumbnail = "100x100.png";
-
-    public Date getCreated() {
-
-        return created;
-    }
-
-    public void setCreated(Date created) {
-
-        this.created = created;
-    }
 
     public String getUrl() {
 
