@@ -1,6 +1,7 @@
 package bookiemarker.api.domain;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Bookmark
@@ -8,6 +9,8 @@ public class Bookmark
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    private Date created;
 
     private String url;
 
@@ -17,6 +20,16 @@ public class Bookmark
     private String title = "";
 
     private String thumbnail = "100x100.png";
+
+    public Date getCreated() {
+
+        return created;
+    }
+
+    public void setCreated(Date created) {
+
+        this.created = created;
+    }
 
     public String getSummary() {
 
