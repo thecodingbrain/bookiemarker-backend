@@ -16,7 +16,8 @@ public class RabbitMqConfiguration
     @Bean
     public ConnectionFactory connectionFactory()
     {
-        CachingConnectionFactory connectionFactory = new CachingConnectionFactory("localhost");
+        CachingConnectionFactory connectionFactory =
+                new CachingConnectionFactory("localhost");
         connectionFactory.setUsername("user");
         connectionFactory.setPassword("password");
         connectionFactory.setPort(7234);
@@ -33,7 +34,8 @@ public class RabbitMqConfiguration
     @Bean
     public MessageConverter jsonMessageConverter()
     {
-        final Jackson2JsonMessageConverter converter = new Jackson2JsonMessageConverter();
+        final Jackson2JsonMessageConverter converter =
+                new Jackson2JsonMessageConverter();
         converter.setClassMapper(classMapper());
         return converter;
     }

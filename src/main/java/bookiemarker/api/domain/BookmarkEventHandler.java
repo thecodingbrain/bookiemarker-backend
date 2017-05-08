@@ -21,13 +21,4 @@ public class BookmarkEventHandler
         bookmark.setCreated(new Date());
         bookmark.setUrl(bookmark.getUrl().trim());
     }
-
-    @HandleAfterCreate
-    public void handleAfterBookmarkCreate(Bookmark bookmark)
-    {
-        final TaskMessage taskMessage = new TaskMessage();
-        taskMessage.setUrl(bookmark.getUrl());
-        taskProducer.sendNewTask(taskMessage);
-    }
-
 }

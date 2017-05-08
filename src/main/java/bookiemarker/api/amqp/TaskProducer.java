@@ -11,7 +11,6 @@ public class TaskProducer
 
     public void sendNewTask(TaskMessage taskMessage)
     {
-        taskProducerConfiguration.rabbitTemplate().convertAndSend(taskProducerConfiguration.TASKS_QUEUE, taskMessage);
     }
 
 }
