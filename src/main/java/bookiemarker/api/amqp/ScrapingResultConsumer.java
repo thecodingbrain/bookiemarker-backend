@@ -8,7 +8,7 @@ import bookiemarker.api.domain.BookmarkRepository;
 import java.util.List;
 
 @Component
-public class ScrapingResultHandler
+public class ScrapingResultConsumer
 {
     @Autowired
     private BookmarkRepository bookmarkRepository;

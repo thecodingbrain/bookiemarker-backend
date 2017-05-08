@@ -8,14 +8,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class TaskProducerConfiguration extends RabbitMqConfiguration
 {
-    protected final String tasksQueue = "tasks.queue";
+    protected final String TASKS_QUEUE = "tasks.queue";
 
     @Bean
     public RabbitTemplate rabbitTemplate()
     {
         RabbitTemplate template = new RabbitTemplate(connectionFactory());
-        template.setRoutingKey(this.tasksQueue);
-        template.setQueue(this.tasksQueue);
+        template.setRoutingKey(this.TASKS_QUEUE);
+        template.setQueue(this.TASKS_QUEUE);
         template.setMessageConverter(jsonMessageConverter());
         return template;
     }
@@ -23,6 +23,6 @@ public class TaskProducerConfiguration extends RabbitMqConfiguration
     @Bean
     public Queue tasksQueue()
     {
-        return new Queue(this.tasksQueue);
+        return new Queue(this.TASKS_QUEUE);
     }
 }

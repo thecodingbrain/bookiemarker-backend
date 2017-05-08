@@ -11,30 +11,30 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ScrapingResultConsumerConfiguration extends RabbitMqConfiguration
 {
-	protected final String scrapingResultQueue = "scrapingresult.queue";
+	private final static String SCRAPING_RESULT_QUEUE = "scrapingresult.queue";
 
     @Autowired
-    private ScrapingResultHandler scrapingResultHandler;
+    private ScrapingResultConsumer scrapingResultConsumer;
 
 	@Bean
 	public RabbitTemplate rabbitTemplate() {
 		RabbitTemplate template = new RabbitTemplate(connectionFactory());
-		template.setRoutingKey(this.scrapingResultQueue);
-		template.setQueue(this.scrapingResultQueue);
+		template.setRoutingKey(SCRAPING_RESULT_QUEUE);
+		template.setQueue(SCRAPING_RESULT_QUEUE);
         template.setMessageConverter(jsonMessageConverter());
 		return template;
 	}
 
     @Bean
 	public Queue scrapingResultQueue() {
-		return new Queue(this.scrapingResultQueue);
+		return new Queue(SCRAPING_RESULT_QUEUE);
 	}
 
 	@Bean
 	public SimpleMessageListenerContainer listenerContainer() {
 		SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
 		container.setConnectionFactory(connectionFactory());
-		container.setQueueNames(this.scrapingResultQueue);
+		container.setQueueNames(SCRAPING_RESULT_QUEUE);
 		container.setMessageListener(messageListenerAdapter());
 
 		return container;
@@ -42,6 +42,6 @@ public class ScrapingResultConsumerConfiguration extends RabbitMqConfiguration
 
     @Bean
     public MessageListenerAdapter messageListenerAdapter() {
-        return new MessageListenerAdapter(scrapingResultHandler, jsonMessageConverter());
+        return new MessageListenerAdapter(scrapingResultConsumer, jsonMessageConverter());
     }
 }
