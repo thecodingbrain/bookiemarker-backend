@@ -16,15 +16,6 @@ public class ScrapingResultConsumerConfiguration extends RabbitMqConfiguration
     @Autowired
     private ScrapingResultConsumer scrapingResultConsumer;
 
-	@Bean
-	public RabbitTemplate rabbitTemplate() {
-		RabbitTemplate template = new RabbitTemplate(connectionFactory());
-		template.setRoutingKey(SCRAPING_RESULT_QUEUE);
-		template.setQueue(SCRAPING_RESULT_QUEUE);
-        template.setMessageConverter(jsonMessageConverter());
-		return template;
-	}
-
     @Bean
 	public Queue scrapingResultQueue() {
 		return new Queue(SCRAPING_RESULT_QUEUE);
